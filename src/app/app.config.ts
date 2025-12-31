@@ -10,12 +10,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([ ])),
-
-    /* TODO: (optional) Enable for push notifications via web worker
-    provideServiceWorker('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      registrationStrategy: 'registerWhenStable:30000'
-    })*/
+    provideHttpClient(withInterceptors([ ]))
   ]
 };
