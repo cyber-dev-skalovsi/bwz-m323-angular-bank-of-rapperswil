@@ -21,7 +21,11 @@ export class AuthService {
   }
 
   register(data: any) {
-    return this.api.register(data);
+    return this.api.register(data).pipe(tap(account => {
+      if (account) {
+        this.login({ login: data.login, password: data.password }).subscribe();
+      }
+    }));
   }
 
   logout() {
