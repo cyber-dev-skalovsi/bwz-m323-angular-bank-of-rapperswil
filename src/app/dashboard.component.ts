@@ -76,7 +76,7 @@ export class DashboardComponent implements OnInit {
   load() {
     this.txApi.getTransactions(this.auth.getToken(), { count: 10, skip: this.page() * 10 })
       .subscribe(d => {
-        this.txs.set([...d.result]);  // ← Add [...] here
+        this.txs.set([...d.result]);
         this.pages.set(Math.ceil(d.query.resultcount / 10));
       });
   }
