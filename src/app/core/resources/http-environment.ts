@@ -14,6 +14,5 @@ export function getOptions(token?: string, hasBody = true, params?: HttpParams) 
 }
 
 export function getServerUrl(path: string) {
-  // should be placed in the environment file
   return `${environment.serverBaseUrl}${path}`;
 }
